@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Case Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #e9e9e9;
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+            min-height: 100vh;
+        }
+
+        /* --- New Glass Effect Card Style --- */
+        .card-glass {
+            background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-right-color: rgba(255, 255, 255, 0.2);
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px); /* The Frosted Glass effect */
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* --- New Animation Style --- */
+        .results-container {
+            opacity: 0; /* Hidden by default */
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .results-container.visible {
+            opacity: 1; /* Make it visible */
+            transform: translateY(0);
+        }
+
+        /* --- New Loading Spinner Style --- */
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #dc3545; /* Red color */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
+
+        /* Timeline styles from before */
+        .timeline { list-style-type: none; padding-left: 0; position: relative; }
+        .timeline::before { content: ''; position: absolute; top: 15px; left: 15px; bottom: 15px; width: 3px; background: #e9ecef; }
+        .timeline-item { position: relative; margin-bottom: 30px; padding-left: 45px; }
+        .timeline-icon { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: #adb5bd; color: white; display: flex; align-items: center; justify-content: center; }
+        .timeline-item.active .timeline-icon { background: #28a745; }
+        .timeline-item.current .timeline-icon { background: #dc3545; }
+        .timeline-content { background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 6px; }
+        .timeline-content h5 { font-weight: bold; }
+    </style>
+</head>
+<body class="p-4">
+
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="display-4 font-weight-bold">Track Your Case Status</h1>
+            <p class="lead text-muted">Enter your Case ID for real-time updates.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card-glass">
+                    <div class="input-group">
+                        <input id="caseIdInput" type="text" class="form-control form-control-lg" placeholder="Enter Case ID 'ANOW-12345' to test...">
+                        <div class="input-group-append">
+                            <button id="trackBtn" class="btn btn-danger" type="button"><i class="fa fa-search"></i> Track</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-10 mx-auto">
+                <div id="loader" class="loader hidden"></div>
+                
+                <div id="notFound" class="alert alert-warning text-center hidden" role="alert">
+                    <h4><i class="fa fa-exclamation-triangle"></i> Case Not Found</h4>
+                    Please check the Case ID and try again.
+                </div>
+
+                <div id="resultsCard" class="card-glass results-container">
+                    <div id="trackingDetails">
+                        <h4 id="trackingIdHeader" class="mb-4 font-weight-bold">Tracking Details for Case ID: ...</h4>
+                        <div class="row mb-4">
+                            <div class="col-md-6"><strong>Subject:</strong> Tenant Eviction Notice</div>
+                            <div class="col-md-6"><strong>Assigned Advocate:</strong> Adv. Arjun Mehta</div>
+                        </div>
+                        <ul class="timeline">
+                            <li class="timeline-item active"><div class="timeline-icon"><i class="fa fa-check"></i></div><div class="timeline-content"><h5>Case Filled</h5><p class="text-muted mb-0">September 15, 2025</p></div></li>
+                            <li class="timeline-item active"><div class="timeline-icon"><i class="fa fa-check"></i></div><div class="timeline-content"><h5>Advocate Assigned</h5><p class="text-muted mb-0">September 16, 2025</p></div></li>
+                            <li class="timeline-item current"><div class="timeline-icon"><i class="fa fa-gavel"></i></div><div class="timeline-content"><h5>First Consultation Held</h5><p class="text-muted mb-0">September 18, 2025</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const trackBtn = document.getElementById('trackBtn');
+        const caseIdInput = document.getElementById('caseIdInput');
+        const resultsCard = document.getElementById('resultsCard');
+        const trackingIdHeader = document.getElementById('trackingIdHeader');
+        const loader = document.getElementById('loader');
+        const notFoundMessage = document.getElementById('notFound');
+
+        trackBtn.addEventListener('click', function() {
+            const caseId = caseIdInput.value;
+
+            if (caseId.trim() === '') {
+                alert('Please enter a Case ID.');
+                return;
+            }
+
+            // --- New Logic ---
+            // 1. Hide previous results
+            resultsCard.classList.remove('visible');
+            notFoundMessage.classList.add('hidden');
+
+            // 2. Show the loader
+            loader.classList.remove('hidden');
+
+            // 3. Wait for 1.5 seconds to simulate a search
+            setTimeout(() => {
+                // 4. Hide the loader
+                loader.classList.add('hidden');
+                
+                // 5. Check if the Case ID is the correct one
+                if (caseId === 'ANOW-12345') {
+                    trackingIdHeader.textContent = `Tracking Details for Case ID: ${caseId}`;
+                    resultsCard.classList.add('visible'); // Show results with animation
+                } else {
+                    notFoundMessage.classList.remove('hidden'); // Show "Not Found" message
+                }
+            }, 1500); // 1.5 second delay
+        });
+    </script>
+</body>
+</html>

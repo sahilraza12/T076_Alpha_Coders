@@ -1,0 +1,141 @@
+body {
+    background-color: #f4f7f6;
+    font-family: sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background: #232d3b; /* Dark sidebar */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #3c4656;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.sidebar .nav-link {
+    color: #adb5bd;
+    padding: 15px 25px;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    background: #3c4656;
+    color: #fff;
+    border-left: 3px solid #dc3545; /* Highlight color */
+}
+
+.sidebar .nav-link.active {
+    background: #dc3545;
+    color: #fff;
+    border-left: 3px solid #fff;
+}
+
+.sidebar .nav-link .fa {
+    margin-right: 15px;
+    width: 20px; /* Align icons */
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Allow content to scroll if it's too long */
+}
+
+#content-area {
+    width: 100%;
+}
+
+/* Ensure section headings from your original code look good here */
+.section-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #232d3b;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+/* ======== Case Tracker Timeline CSS ======== */
+
+/* Hides the results card by default */
+.tracking-results {
+    display: none;
+}
+
+.timeline {
+    list-style-type: none;
+    padding-left: 0;
+    position: relative;
+}
+
+/* The vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    bottom: 15px;
+    width: 3px;
+    background: #e9ecef; /* Light grey line */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 45px; /* Space for the icon */
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #adb5bd; /* Default grey for pending items */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px #adb5bd;
+}
+
+/* Style for completed items (green) */
+.timeline-item.active .timeline-icon {
+    background: #28a745;
+    box-shadow: 0 0 0 3px #28a745;
+}
+
+/* Style for the current item (red) */
+.timeline-item.current .timeline-icon {
+    background: #dc3545; /* Your brand's red color */
+    box-shadow: 0 0 0 3px #dc3545;
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.timeline-content h5 {
+    font-weight: bold;
+    color: #343a40;
+}

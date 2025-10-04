@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard - AdhikarNOW</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>AdhikarNOW</h3>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-page="welcome.html">
+                        <i class="fa fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="advocates.html">
+                        <i class="fa fa-users"></i> Find Advocates
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="qna-forum.html">
+                        <i class="fa fa-question-circle"></i> Q&A Forum
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="case-tracker.html">
+                        <i class="fa fa-line-chart"></i> Case Tracker
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="document-generator.html">
+                        <i class="fa fa-file-text"></i> Document Generator
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="police-directory.html">
+                        <i class="fa fa-building"></i> Police Directory
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="fee-calculator.html">
+                        <i class="fa fa-calculator"></i> Fee Calculator
+                    </a>
+                </li>
+                 <li class="nav-item mt-auto">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-sign-out"></i> Back to Main Site
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="content-area" class="p-4">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contentArea = document.getElementById('content-area');
+            const navLinks = document.querySelectorAll('.sidebar .nav-link');
+
+            // Function to load content
+            const loadContent = (page) => {
+                // Show a loading indicator
+                contentArea.innerHTML = '<div class="text-center p-5"><i class="fa fa-spinner fa-spin fa-3x"></i><p>Loading...</p></div>';
+                
+                fetch(page)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        contentArea.innerHTML = html;
+                    })
+                    .catch(error => {
+                        contentArea.innerHTML = `<div class="alert alert-danger"><strong>Error:</strong> Could not load content. Please make sure the file '${page}' exists.</div>`;
+                        console.error('Error loading page:', error);
+                    });
+            };
+
+            // Handle sidebar link clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Add active class to the clicked link
+                    this.classList.add('active');
+                    
+                    const page = this.getAttribute('data-page');
+                    if (page) {
+                        loadContent(page);
+                    }
+                });
+            });
+
+            // Load the default welcome page
+            loadContent('welcome.html');
+        });
+    </script>
+</body>
+</html>

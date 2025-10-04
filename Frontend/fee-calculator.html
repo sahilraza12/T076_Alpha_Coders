@@ -1,0 +1,98 @@
+<h1 class="section-heading">Legal Fee Calculator</h1>
+<p class="lead text-muted">Get a rough estimate of standard legal consultation and initial filing fees.</p>
+
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-exclamation-triangle"></i> <strong>Disclaimer:</strong> This is for estimation purposes only. Actual fees will vary based on the specific advocate, case details, and duration.
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-white">
+        <h5>Enter Case Details</h5>
+    </div>
+    <div class="card-body">
+        <form id="feeCalculatorForm">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="caseType"><strong>1. Select Case Type</strong></label>
+                    <select class="form-control" id="caseType">
+                        <option value="10000">Family Law (Divorce, Custody)</option>
+                        <option value="8000">Property Dispute</option>
+                        <option value="15000">Criminal Law (Bail, FIR)</option>
+                        <option value="7000">Consumer Complaint</option>
+                        <option value="9000">Labor & Employment</option>
+                        <option value="12000">Cyber Law</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="cityTier"><strong>2. Select Your City Tier</strong></label>
+                    <select class="form-control" id="cityTier">
+                        <option value="1.5">Tier 1 (Metro City like Delhi, Mumbai)</option>
+                        <option value="1.2">Tier 2 (City like Ludhiana, Chandigarh)</option>
+                        <option value="1.0">Tier 3 (Smaller Town)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><strong>3. Select Case Complexity</strong></label>
+                <div class="d-flex">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="complexity" id="simple" value="1.0" checked>
+                        <label class="form-check-label" for="simple">Simple (Straightforward facts)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="complexity" id="moderate" value="1.8">
+                        <label class="form-check-label" for="moderate">Moderate (Requires evidence collection)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="complexity" id="complex" value="2.5">
+                        <label class="form-check-label" for="complex">Complex (Multiple hearings, extensive research)</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-lg mt-3">
+                <i class="fa fa-calculator"></i> Calculate Estimated Fee
+            </button>
+        </form>
+    </div>
+</div>
+
+<div id="resultArea" class="mt-4" style="display: none;">
+    <div class="card border-success">
+        <div class="card-body text-center">
+            <h5 class="card-title text-success">Estimated Fee Range</h5>
+            <p class="display-4 font-weight-bold" id="feeResult">₹0 - ₹0</p>
+            <p class="text-muted">This range includes initial consultation, document drafting, and first-hearing appearance fees.</p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Wait for the form to be submitted
+    document.getElementById('feeCalculatorForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the page from reloading
+
+        // 1. Get values from the form
+        const baseFee = parseFloat(document.getElementById('caseType').value);
+        const cityMultiplier = parseFloat(document.getElementById('cityTier').value);
+        const complexityMultiplier = parseFloat(document.querySelector('input[name="complexity"]:checked').value);
+
+        // 2. Perform the calculation
+        const estimatedBase = baseFee * cityMultiplier * complexityMultiplier;
+
+        // Create a range for a more realistic estimate
+        const minFee = Math.round(estimatedBase * 0.8);
+        const maxFee = Math.round(estimatedBase * 1.2);
+
+        // Format numbers to Indian currency style (e.g., 15,000)
+        const formattedMin = minFee.toLocaleString('en-IN');
+        const formattedMax = maxFee.toLocaleString('en-IN');
+        
+        // 3. Display the result
+        document.getElementById('feeResult').innerText = `₹${formattedMin} - ₹${formattedMax}`;
+        document.getElementById('resultArea').style.display = 'block'; // Show the result card
+    });
+</script>

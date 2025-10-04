@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    
+    <title>AdhikarNOW</title>
+
+    <style>
+      /* Add some basic styling for new sections if not in style.css */
+      #find-help, #know-your-rights, #about {
+        padding: 60px 0;
+      }
+      .section-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+      .step-card, .right-card {
+        padding: 30px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      .step-card:hover, .right-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .step-card .icon {
+        font-size: 40px;
+        color: #dc3545; /* Bootstrap danger color */
+        margin-bottom: 20px;
+      }
+      #map {
+        height: 450px;
+        width: 100%;
+      }
+      /* You can keep your existing CSS in style.css */
+    </style>
+  </head>
+  <body>
+    
+ 
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#">AdhikarNOW</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-bars text-light" aria-hidden="true"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto"> <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#find-help">Find Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#know-your-rights">Know Your Rights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a> </li>
+          <li class="nav-item ml-lg-3">
+          <a class="btn btn-outline-light" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+         <a class="nav-link font-weight-bold" href="dashboard.html">Dashboard</a>
+         <!-- <p class="login-link text-muted">Already have an account? <a href="login.html">Log In</a></p> -->
+         </li>
+<!--          
+         <a class="nav-link font-weight-bold" href="login.html">Login / Dashboard</a> -->
+      </ul>
+    </div>
+  </nav>
+
+    <div class="sos-button-container">
+      <button id="sosBtn" class="btn btn-danger btn-lg rounded-pill">
+        <i class="fa fa-bell"></i> SOS
+      </button>
+    </div>
+    <div id="sos-info" class="sos-info-panel d-none"></div>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/360_F_516209984_APT701DWSDCUPzErByEByUrqEjHwRYCX.jpg" alt="AdhikarNOW Homepage">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="heading animated flipInX delay-1s ">JUSTICE, SIMPLIFIED</p>
+              <p class="sub-heading animated rollIn delay-2s">EMPOWERING CITIZENS WITH EASY ACCESS TO LEGAL SUPPORT AND RIGHTS AWARENESS.</p>
+              <a href="#find-help" class="btn btn-lg btn-danger mt-5 animated infinite bounce delay-2s">FIND LEGAL HELP</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/legal-law-and-justice-concept-open-law-book-with-a-wooden-judges-gavel-in-a-courtroom-or-law-enforcement-office-free-photo.jpg" alt="AdhikarNOW Homepage">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="heading animated flipInX delay-1s ">YOUR RIGHTS, YOUR POWER</p>
+              <p class="sub-heading animated rollIn delay-2s">DISCOVER LEGAL SOLUTIONS TAILORED FOR EVERYDAY CITIZENS-CLEAR, AFFORDABLE AND ACCESSIBLE</p>
+              <a href="#know-your-rights" class="btn btn-lg btn-danger mt-5 animated infinite bounce delay-2s">EXPLORE RESOURCES</a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+<div class="container-fluid">
+  <div class="row bg-section text-center py-4">
+    <div class="col-md-4 icon-text">
+      <i class="fa fa-balance-scale fa-2x mb-2" aria-hidden="true"></i>
+      <h5>FAIR & TRANSPARENT ACCESS</h5>
+      <p>Connect with legal help without hidden costs or confusion.</p>
+    </div>
+    <div class="col-md-4 icon-text bg-highlight">
+      <i class="fa fa-star fa-2x mb-2" aria-hidden="true"></i>
+      <h5>KNOW YOUR RIGHTS</h5>
+      <p>Explore simplified legal tips and resources for everyday issues.</p>
+    </div>
+    <div class="col-md-4 icon-text">
+      <i class="fa fa-clock-o fa-2x mb-2" aria-hidden="true"></i>
+      <h5>QUICK & EASY NAVIGATION</h5>
+      <p>Find relevant legal support in just a few clicks—no jargon.</p>
+    </div>
+    <div class="offer-card">
+    <h1>🎁 Get Your First Consultation Free!</h1>
+    <p>Sign up today and connect with  verified advocate at no cost.</p>
+    <button id="claimBtn">Claim Now</button>
+    <div id="confirmation" class="hidden">✅ Offer Claimed! Your consultantation will be assigned shortly.</div>
+  </div>
+
+  <script src="script.js"></script>
+
+  </div>
+</div>
+
+<section id="find-help">
+  <div class="container text-center">
+    <h1 class="section-heading wow fadeInDown">Get Legal Help in 3 Simple Steps</h1>
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4 wow zoomIn" data-wow-delay="0.2s">
+        <div class="step-card">
+          <div class="icon"><i class="fa fa-pencil-square-o"></i></div>
+          <h5>1. Tell Us Your Case</h5>
+          <p id="text">Fill out a simple form to describe your legal issue confidentially. The more details you provide, the better we can help.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 wow zoomIn" data-wow-delay="0.4s">
+        <div class="step-card">
+          <div class="icon"><i class="fa fa-users"></i></div>
+          <h5>2. Connect with an Advocate</h5>
+          <p>Our system matches you with a verified, experienced advocate who specializes in your specific legal area.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 wow zoomIn" data-wow-delay="0.6s">
+        <div class="step-card">
+          <div class="icon"><i class="fa fa-comments-o"></i></div>
+          <h5>3. Get Your Consultation</h5>
+          <p>Schedule a call or meeting with your chosen advocate to discuss your case and get clear, actionable legal advice.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn btn-danger btn-lg mt-4 wow fadeInUp">Get Started Now</a>
+  </div>
+</section>
+
+<section id="know-your-rights" class="bg-light">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="section-heading wow fadeInDown">Empower Yourself with Knowledge</h1>
+      <p class="lead text-muted">Understanding your rights is the first step to justice. Explore our guides on common legal topics.</p>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-users fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Family Law</h5>
+            <p class="card-text">Learn about divorce, child custody, alimony, and other family-related legal matters.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-home fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Property Law</h5>
+            <p class="card-text">Understand your rights in property disputes, rent agreements, and real estate transactions.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-shopping-cart fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Consumer Rights</h5>
+            <p class="card-text">Know what to do about faulty products, poor service, and unfair trade practices.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-briefcase fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Labor & Employment</h5>
+            <p class="card-text">Get information on wrongful termination, workplace harassment, and wage disputes.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-gavel fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Criminal Law</h5>
+            <p class="card-text">Learn about the process of filing an FIR, bail procedures, and your rights when arrested.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4 mb-4 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="card right-card">
+          <div class="card-body text-center">
+            <i class="fa fa-laptop fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Cyber Law</h5>
+            <p class="card-text">Find out how to deal with online fraud, social media harassment, and data theft.</p>
+            <a href="#" class="btn btn-outline-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container mt-5">
+  <div class="row wow flash">
+    <div class="col-md-12 text-center">
+      <h1>TOOLS TO PROTECT YOUR RIGHTS</h1>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row wow flash">
+    <div class="col-md-12 text-center">
+      <h1 class="mb-4">MEET OUR ADVOCATES</h1>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-3 wow zoomInDown">
+      <div class="card">
+        <img class="card-img-top img-fluid" alt="Advocate A" src="img/istockphoto-1326920136-612x612.jpg">
+        <div class="card-body">
+          <div class="card-heading font-weight-bold">Adv. Riya Sharma</div>
+          <p class="card-text">Specializes in family law and women’s rights. Known for empathetic counsel and strong courtroom presence.</p>
+          <a class="btn btn-pink text-light"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 wow zoomInRight">
+      <div class="card">
+        <img class="card-img-top img-fluid" alt="Advocate B" src="img/360_F_1209552212_RFSjZ1H1dqcHqPFORJ1sZSUxyDHBMHNX.jpg">
+        <div class="card-body">
+          <div class="card-heading font-weight-bold">Adv. Arjun Mehta</div>
+          <p class="card-text">Criminal defense expert with 10+ years of experience. Offers strategic legal solutions and fast response.</p>
+          <a class="btn btn-pink text-light"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 wow zoomInUp">
+      <div class="card">
+        <img class="card-img-top img-fluid" alt="Advocate C" src="img/360_F_550918942_1sAVq1eOIrB6mjcTNgcgHuStQPUoA2PL.jpg">
+        <div class="card-body">
+          <div class="card-heading font-weight-bold">Adv. Sneha Kapoor</div>
+          <p class="card-text">Handles property disputes and civil litigation. Trusted for transparent advice and timely case updates.</p>
+          <a class="btn btn-pink text-light"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 wow zoomInDown">
+      <div class="card">
+        <img class="card-img-top img-fluid" alt="Advocate D" src="img/1-indian-adult-man-lawyer-shaking-hand-F2TFHF.jpg">
+        <div class="card-body">
+          <div class="card-heading font-weight-bold">Adv. Manish Verma</div>
+          <p class="card-text">Expert in labor law and workplace rights. Helps clients navigate disputes with clarity and confidence.</p>
+          <a class="btn btn-pink text-light"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.timeline { list-style: none; padding: 0; position: relative; }
+.timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 4px; background: #f1f1f1; left: 30px; margin: 0;}
+.timeline-item { margin-bottom: 20px; position: relative; padding-left: 60px;}
+.timeline-icon { position: absolute; left: 18px; top: 0; width: 25px; height: 25px; border-radius: 50%; background: #ddd; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;}
+.timeline-item.active .timeline-icon { background: #28a745; /* Green for completed */}
+.timeline-item.current .timeline-icon { background: #dc3545; /* Red for current step */}
+.timeline-content { background: #f8f9fa; border: 1px solid #eee; padding: 15px; border-radius: 6px; }
+</style>
+
+<div class="modal fade" id="legalNoticeModal" tabindex="-1" role="dialog" aria-labelledby="legalNoticeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="legalNoticeModalLabel">Generate Legal Notice for Non-Payment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <h6>Step 1: Your (Sender's) Details</h6>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Full Name</label>
+              <input type="text" id="senderName" class="form-control" placeholder="Enter your full name">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Father's Name</label>
+              <input type="text" id="senderFatherName" class="form-control" placeholder="Enter your father's name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Address</label>
+            <input type="text" id="senderAddress" class="form-control" placeholder="Enter your complete address">
+          </div>
+          <hr>
+          <h6>Step 2: Recipient's (Receiver's) Details</h6>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Recipient's Full Name</label>
+              <input type="text" id="recipientName" class="form-control" placeholder="Enter recipient's name">
+            </div>
+             <div class="form-group col-md-6">
+              <label>Recipient's Address</label>
+              <input type="text" id="recipientAddress" class="form-control" placeholder="Enter recipient's address">
+            </div>
+          </div>
+          <hr>
+          <h6>Step 3: Notice Details</h6>
+          <div class="form-group">
+            <label>Subject of Notice</label>
+            <input type="text" class="form-control" value="Legal Notice for non-payment of dues" disabled>
+          </div>
+          <div class="form-group">
+            <label>Reason / Facts in Brief</label>
+            <textarea id="noticeReason" class="form-control" rows="4" placeholder="Briefly describe the reason. E.g., 'Payment for supplied goods...'"></textarea>
+          </div>
+           <div class="form-group">
+            <label>Amount Due (in INR)</label>
+            <input type="number" id="noticeAmount" class="form-control" placeholder="e.g., 25000">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" id="generateNoticeBtn" class="btn btn-danger"><i class="fa fa-download"></i> Generate & Download PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="askQuestionModal" tabindex="-1" role="dialog" aria-labelledby="askQuestionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="askQuestionModalLabel">Ask Your Legal Question</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="questionTitle">Question Title</label>
+            <input type="text" class="form-control" id="questionTitle" placeholder="e.g., Tenant not paying rent, what to do?">
+          </div>
+          <div class="form-group">
+            <label for="questionCategory">Select a Category</label>
+            <select class="form-control" id="questionCategory">
+              <option>Property Law</option>
+              <option>Family Law</option>
+              <option>Consumer Rights</option>
+              <option>Criminal Law</option>
+              <option>Labor & Employment</option>
+              <option>Cyber Law</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="questionDetails">Describe your question in detail</label>
+            <textarea class="form-control" id="questionDetails" rows="6"></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="postAnonymously">
+            <label class="form-check-label" for="postAnonymously">Post Anonymously (hide my name)</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Submit Question</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="about">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="section-heading wow fadeInDown">About AdhikarNOW</h1>
+    </div>
+    <div class="row align-items-center mt-5">
+      <div class="col-md-6 wow fadeInLeft">
+        <img src="img/legal-law-and-justice-concept-open-law-book-with-a-wooden-judges-gavel-in-a-courtroom-or-law-enforcement-office-free-photo.jpg" alt="About AdhikarNOW" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 wow fadeInRight">
+        <h3>Our Mission</h3>
+        <p class="text-muted">To bridge the gap between ordinary citizens and the legal system. We believe that justice should not be complicated, expensive, or intimidating. AdhikarNOW is built to provide simple, affordable, and accessible legal solutions for everyone.</p>
+        <h3 class="mt-4">Our Vision</h3>
+        <p class="text-muted">We envision an India where every citizen is aware of their rights and has the confidence to seek justice without hesitation. Through technology, we aim to become the most trusted platform for legal guidance and support in the country.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="founder-section">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="founder-card">
+              <div class="founder-img-container">
+                <img src="img/unnamed (16).png" alt="Sahil Raja - Founder of AdhikarNOW" class="founder-img">
+              </div>
+              <div class="founder-info">
+                <h2 class="founder-name">Sahil</h2>
+                <p class="founder-title">Founder, AdhikarNOW</p>
+                <p class="founder-quote">“Built to empower citizens with access to justice. Let’s make rights reachable.”</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section> -->
+<div class="container-fluid bc">
+  <div class="container pt-5 pb-5">
+    <div class="row inner-text">
+      <div class="col-md-6 text-dark">
+        <h3 class="wow slideInUp">EMPOWERING CITIZENS</h3>
+        <h1 class="mt-4 wow slideInDown">Legal Help Made Simple, Fast & Accessible</h1>
+        <a class="btn btn-lg btn-dark text-light mt-3 wow slideInLeft">GET STARTED</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="testimonial-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">Success Stories from Our Users</h2>
+                <p class="section-subtitle">Join 100+ families who have found clarity and support through AdhikarNOW.</p>
+            </div>
+        </div>
+        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-card">
+                        <div class="star-rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"AdhikarNOW connected me with a fantastic lawyer for my property dispute. The process was transparent and much faster than I expected. Our family is grateful for this platform."</p>
+                        <p class="testimonial-author">- Priya K., Ludhiana</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-card">
+                        <div class="star-rating">
+                           <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I used the Police Directory to find contact information urgently. It was accurate and saved me a lot of time during a stressful situation. A must-have resource for everyone."</p>
+                        <p class="testimonial-author">- Amit Singh, Jalandhar</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<div class="container mt-5">
+  <div class="row wow flash">
+    <div class="col-md-12 text-center">
+      <h2 class="text-dark font-weight-bold">EXPLORE OUR MOST TRUSTED LEGAL TOOLS</h2>
+      <p class="text-muted mt-2">Browse top-selling resources designed to simplify justice access for every citizen.</p>
+    </div>
+  </div>
+
+  <div class="row mt-4 wow bounceIn text-center">
+    <div class="col-md-12">
+      <a class="btn btn-outline-dark m-2 px-4 py-2">View Legal Kits</a>
+      <a class="btn btn-outline-dark m-2 px-4 py-2">Know Your Rights</a>
+      <a class="btn btn-outline-dark m-2 px-4 py-2">Find Advocates</a>
+      <a class="btn btn-outline-dark m-2 px-4 py-2">Police Directory</a>
+      <a class="btn btn-outline-dark m-2 px-4 py-2">Legal FAQs</a>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="mb-4">OUR LOCATION</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<li class="nav-item">
+    <a class="nav-link" href="#" data-toggle="modal" data-target="#caseTrackerModal">Track Case</a>
+</li>
+
+<div class="modal fade" id="caseTrackerModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Track Your Case Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <input id="caseIdInput" type="text" class="form-control form-control-lg" placeholder="Enter Case ID 'ANOW-12345' to test...">
+          <div class="input-group-append">
+            <button id="trackBtn" class="btn btn-danger" type="button"><i class="fa fa-search"></i> Track</button>
+          </div>
+        </div>
+        <div id="loader" class="loader hidden mt-4"></div>
+        <div id="notFound" class="alert alert-warning text-center hidden mt-4" role="alert">
+          <h4><i class="fa fa-exclamation-triangle"></i> Case Not Found</h4>
+        </div>
+        <div id="resultsCard" class="results-container mt-4">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    /* Custom CSS for the Membership Section */
+    .membership-section {
+        background-color: #f8f9fa; /* A light grey background to make the section stand out */
+    }
+
+    .pricing-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        height: 100%; /* Make cards in the same row equal height */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pricing-card .card-header {
+        border-bottom: 0;
+        background-color: transparent;
+    }
+
+    .pricing-card .card-body {
+        flex-grow: 1; /* Allows body to fill available space */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .pricing-card .price {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #dc3545; /* Your theme's red color */
+    }
+
+    .pricing-card .features-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 20px;
+        flex-grow: 1; /* Pushes the button to the bottom */
+    }
+
+    .pricing-card .features-list li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .pricing-card .features-list .fa {
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+
+    .pricing-card .features-list .fa-check-circle {
+        color: #28a745; /* Green for included features */
+    }
+
+    .pricing-card .features-list .fa-times-circle {
+        color: #6c757d; /* Grey for excluded features */
+    }
+
+    /* Style for the 'Most Popular' badge */
+    .card-popular {
+        border: 2px solid #dc3545;
+        position: relative;
+    }
+
+    .popular-badge {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    /* Styling for duration buttons */
+    .duration-selector .btn {
+      background-color: #e9ecef;
+      border-color: #e9ecef;
+      color: #495057;
+    }
+    .duration-selector .btn.active {
+      background-color: #343a40; /* Dark color for active selection */
+      color: white;
+      border-color: #343a40;
+    }
+</style>
+<section id="membership" class="py-5 membership-section">
+  <div class="container">
+    <div class="text-center wow fadeInDown mb-5">
+      <h1 class="section-heading">Become a Member</h1>
+      <p class="lead text-muted">Choose a plan that fits your legal needs and get exclusive benefits.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="card pricing-card text-center">
+          <div class="card-header py-4">
+            <h4 class="font-weight-bold">Basic</h4>
+            <p class="text-muted">For initial advice and guidance</p>
+          </div>
+          <div class="card-body px-4">
+            <h2 class="price mb-0" id="price-basic">₹1,499</h2>
+            <p class="text-muted">per 3 months</p>
+
+            <div class="btn-group duration-selector my-3" role="group">
+              <button type="button" class="btn btn-secondary duration-btn active" data-plan="basic" data-duration="3">3 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="basic" data-duration="6">6 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="basic" data-duration="12">1 Year</button>
+            </div>
+
+            <ul class="features-list text-left">
+              <li><i class="fa fa-check-circle"></i>Unlimited Legal Consultations</li>
+              <li><i class="fa fa-check-circle"></i>Priority Q&A Support</li>
+              <li><i class="fa fa-times-circle"></i>Legal Document Review</li>
+              <li><i class="fa fa-times-circle"></i>Advocate Assignment</li>
+              <li><i class="fa fa-times-circle"></i>Case Filing & Representation</li>
+            </ul>
+
+            <a href="#" class="btn btn-outline-dark btn-lg mt-auto">Choose Basic</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="card pricing-card text-center card-popular">
+          <div class="popular-badge">Most Popular</div>
+          <div class="card-header py-4">
+            <h4 class="font-weight-bold">Pro</h4>
+            <p class="text-muted">For comprehensive legal support</p>
+          </div>
+          <div class="card-body px-4">
+            <h2 class="price mb-0" id="price-pro">₹4,999</h2>
+            <p class="text-muted">per 3 months</p>
+            
+            <div class="btn-group duration-selector my-3" role="group">
+              <button type="button" class="btn btn-secondary duration-btn active" data-plan="pro" data-duration="3">3 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="pro" data-duration="6">6 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="pro" data-duration="12">1 Year</button>
+            </div>
+
+            <ul class="features-list text-left">
+              <li><i class="fa fa-check-circle"></i>Unlimited Legal Consultations</li>
+              <li><i class="fa fa-check-circle"></i>Priority Q&A Support</li>
+              <li><i class="fa fa-check-circle"></i>Legal Document Review (10/month)</li>
+              <li><i class="fa fa-times-circle"></i>Advocate Assignment</li>
+              <li><i class="fa fa-times-circle"></i>Case Filing & Representation</li>
+            </ul>
+
+            <a href="#" class="btn btn-danger btn-lg mt-auto">Choose Pro</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="card pricing-card text-center">
+          <div class="card-header py-4">
+            <h4 class="font-weight-bold">Premium</h4>
+            <p class="text-muted">For complete peace of mind</p>
+          </div>
+          <div class="card-body px-4">
+            <h2 class="price mb-0" id="price-premium">₹9,999</h2>
+            <p class="text-muted">per 3 months</p>
+            
+            <div class="btn-group duration-selector my-3" role="group">
+              <button type="button" class="btn btn-secondary duration-btn active" data-plan="premium" data-duration="3">3 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="premium" data-duration="6">6 Months</button>
+              <button type="button" class="btn btn-secondary duration-btn" data-plan="premium" data-duration="12">1 Year</button>
+            </div>
+            
+            <ul class="features-list text-left">
+              <li><i class="fa fa-check-circle"></i>Unlimited Legal Consultations</li>
+              <li><i class="fa fa-check-circle"></i>Priority Q&A Support</li>
+              <li><i class="fa fa-check-circle"></i>Legal Document Review</li>
+              <li><i class="fa fa-check-circle"></i>Dedicated Advocate Assignment</li>
+              <li><i class="fa fa-check-circle"></i>Case Filing & Representation</li>
+            </ul>
+
+            <a href="#" class="btn btn-outline-dark btn-lg mt-auto">Choose Premium</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Pricing Data ---
+    // Structure to hold all prices. Easy to update later.
+    const prices = {
+        basic: {
+            3: 1499,
+            6: 2799,  // 5% discount
+            12: 5299 // 10% discount
+        },
+        pro: {
+            3: 4999,
+            6: 9499,
+            12: 17999
+        },
+        premium: {
+            3: 9999,
+            6: 18999,
+            12: 35999
+        }
+    };
+    
+    // Select all the duration buttons on the page
+    const durationButtons = document.querySelectorAll('.duration-btn');
+
+    // Add a click event listener to each button
+    durationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const plan = this.dataset.plan;       // e.g., 'basic'
+            const duration = this.dataset.duration; // e.g., '6'
+
+            // --- Update the Price Display ---
+            const priceElement = document.getElementById(`price-${plan}`);
+            const newPrice = prices[plan][duration];
+            // Format to Indian Rupee style (e.g., 1,499)
+            priceElement.innerText = `₹${newPrice.toLocaleString('en-IN')}`;
+
+            // --- Update the 'per month/year' text ---
+            const periodText = priceElement.nextElementSibling; // The <p> tag after the price
+            if (duration === '12') {
+                periodText.innerText = 'per year';
+            } else {
+                periodText.innerText = `per ${duration} months`;
+            }
+
+            // --- Update the Active Button Style ---
+            // 1. Get all buttons belonging to the same card
+            const parentCard = this.closest('.pricing-card');
+            const siblingButtons = parentCard.querySelectorAll('.duration-btn');
+            // 2. Remove 'active' class from all of them
+            siblingButtons.forEach(btn => btn.classList.remove('active'));
+            // 3. Add 'active' class only to the one that was clicked
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+
+
+
+<footer class="adhikar-footer mt-5">
+  <div class="container py-4">
+    <nav class="navbar navbar-expand-lg adhikar-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="img/create a logo for Ad.png" alt="AdhikarNOW Logo" class="logo-img mr-2">
+      <span>AdhikarNOW</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Legal Help</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Police Directory</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Advocates</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="row">
+
+      <div class="col-md-4 mb-4">
+        <h4 class="text-light">AdhikarNOW</h4>
+        <p class="text-muted">Empowering citizens with simplified legal access, verified help, and rights awareness across India.</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="text-light">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#find-help" class="footer-link">Find Legal Help</a></li>
+          <li><a href="#know-your-rights" class="footer-link">Know Your Rights</a></li>
+          <li><a href="#" class="footer-link">Police Directory</a></li>
+          <li><a href="#" class="footer-link">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="text-light">Contact Us</h5>
+        <p class="text-muted mb-1"><i class="fa fa-envelope"></i> support@adhikarnow.in</p>
+        <p class="text-muted mb-1"><i class="fa fa-phone"></i> +91 98765 43210</p>
+        <p class="text-muted"><i class="fa fa-map-marker"></i> Khanna, Punjab, India</p>
+      </div>
+
+    </div>
+
+    <hr class="bg-light">
+    <div class="text-center text-muted small">
+      &copy; 2025 AdhikarNOW. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="chat-widget">
+    <button id="chat-toggle-btn">
+        <i class="fa fa-comments"></i>
+    </button>
+
+    <div id="chat-container" class="hidden">
+        <div id="chat-header">
+            <h5>Chat with AdhikarNOW</h5>
+            <button id="close-chat-btn">&times;</button>
+        </div>
+        <div id="chat-log">
+            <p class="bot-message">Hello! How can we help you today?</p>
+        </div>
+        <form id="chat-input-form">
+            <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" />
+            <button type="submit" id="sendBtn">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+    <script>
+
+      var wow = new WOW(
+  {
+    boxClass:     'wow',      // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset:       0,          // distance to the element when triggering the animation (default is 0)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null,    // optional scroll container selector, otherwise use window,
+    resetAnimation: true,     // reset animation on end (default is true)
+  }
+);
+wow.init();
+
+    </script>
+
+    <script>
+      $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll < 900){
+          $('.fixed-top').css('background', 'transparent');
+        }
+        else{
+          // UPDATED: Changed the background color to the one you requested
+          $('.fixed-top').css('background', '#3D3A4A');
+        }
+      });
+    </script>
+    
+    <script>
+      // This function initializes the map
+      function initMap() {
+        // Coordinates for Khanna, Punjab
+        const khannaLocation = { lat: 30.7041, lng: 76.2185 };
+        
+        // Create the map, centered at Khanna
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: khannaLocation,
+        });
+        
+        // Create a marker and position it on the map
+        const marker = new google.maps.Marker({
+          position: khannaLocation,
+          map: map,
+          title: "AdhikarNOW Location"
+        });
+      }
+      
+    </script>
+
+<script>
+// --- Create a new Audio object for the alarm. It's best to create it outside the function.
+// This is a base64 encoded siren sound so you don't need a separate mp3 file.
+const alarmSound = new Audio('data-audio/mixkit-classic-alarm-995');
+//tAwlDoaA05wAADSAAAAAAAAADSAHAAADSAHAAAA+gHgAD6AeAANIB4AA0gHgADSAHAAADSAAAAAPoB4AA+gHgAD6AeAANIB4AA0gHgADSAAAD6AeAANIB4AA0gHgAD6AeAANIBwAA+gHgADSAAAAA+gHAAAD6AeAANIB4AA+gHAAADSAcD6AcAAAAAAA+gHgADSAAPoB4AA0gHAAAA+gHgADSAAPoBwAA0gAAAAAD6AeAANIBwAA+gHgADSAcD6AcAAAPoBwAA+gHgADSAAAAA+gHAAAD6AcD6AeAANIBwAA+gHgAD6AcD6AcAAAPoBwAA0gAA+gHAAADSAAPoBwPoBwAA0gAD6AeAANIBwPoBwAA+gHAAADSAAD6AcD6AcAAAAAAAPoB4AA+gHgADSAAPoBwAA+gHAAAD6AcD6AcAAAPoBwPoBwAA+gHAAADSAAPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBw//tAwlDoaA05wAADSAAAAAAAAADSAHAAADSAHAAAA+gHgAD6AeAANIB4AA0gHgADSAHAAADSAAAAAPoB4AA+gHgAD6AeAANIB4AA0gHgADSAAAD6AeAANIB4AA0gHgAD6AeAANIBwAA+gHgADSAAAAA+gHAAAD6AeAANIB4AA+gHAAADSAcD6AcAAAAAAA+gHgADSAAPoB4AA0gHAAAA+gHgADSAAPoBwAA0gAAAAAD6AeAANIBwAA+gHgADSAcD6AcAAAPoBwAA+gHgADSAAAAA+gHAAAD6AcD6AeAANIBwAA+gHgADAcD6AcAAAPoBwAA0gAA+gHAAADSAAPoBwPoBwAA0gAD6AeAANIBwPoBwAA+gHAAADSAAD6AcD6AcAAAAAAAPoB4AA+gHgADSAAPoBwAA+gHAAAD6AcD6AcAAAPoBwPoBwAA+gHAAADSAAPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBwPoBw-');
+alarmSound.loop = true; // Makes the alarm sound repeat
+
+document.getElementById('sosBtn').addEventListener('click', function() {
+  if (navigator.geolocation) {
+    // Show a message that we are fetching the location
+    const sosInfoPanel = document.getElementById('sos-info');
+    sosInfoPanel.classList.remove('d-none');
+    sosInfoPanel.innerHTML = `<h5><i class="fa fa-spinner fa-spin"></i> Detecting your location...</h5><p>Please wait.</p>`;
+    
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+});
+
+function showPosition(position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  
+  // 1. Play Alarm Sound
+  alarmSound.play();
+  
+  // 2. Create Google Maps and WhatsApp links
+  const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
+  const message = `*EMERGENCY!* I need help. My current location is: ${googleMapsUrl}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+
+  // 3. Display all options on the panel
+  const sosInfoPanel = document.getElementById('sos-info');
+  sosInfoPanel.classList.remove('d-none'); // Makes the panel visible
+  
+  sosInfoPanel.innerHTML = `
+    <h5 class="text-danger font-weight-bold">EMERGENCY ACTION</h5>
+    <p>Your location is detected. Take action now!</p>
+    
+    <a href="tel:112" class="btn btn-danger btn-block font-weight-bold mb-2">
+      <i class="fa fa-phone"></i> Call 112 (National Emergency)
+    </a>
+    
+    <a href="${whatsappUrl}" target="_blank" class="btn btn-success btn-block font-weight-bold mb-2">
+      <i class="fa fa-whatsapp"></i> Notify Family on WhatsApp
+    </a>
+    
+    <p class="small text-muted text-center mt-3">
+      <strong>Your Location:</strong><br>
+      Latitude: ${lat.toFixed(5)}<br>
+      Longitude: ${lon.toFixed(5)}
+    </p>
+
+    <button onclick="stopAlarmAndClose()" class="btn btn-sm btn-outline-secondary mt-2">
+        <i class="fa fa-bell-slash"></i> Stop Alarm & Close
+    </button>
+  `;
+}
+
+// Function to stop the alarm and close the panel
+function stopAlarmAndClose() {
+    alarmSound.pause(); // Stop the sound
+    alarmSound.currentTime = 0; // Reset sound to the beginning
+    document.getElementById('sos-info').classList.add('d-none'); // Hide the panel
+}
+
+
+function showError(error) {
+  // Stop alarm if it was playing and an error occurred
+  alarmSound.pause();
+  alarmSound.currentTime = 0;
+    
+  let message = "";
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      message = "You denied the request for Geolocation. Please allow location access for SOS to work."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      message = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      message = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      message = "An unknown error occurred."
+      break;
+  }
+  
+  const sosInfoPanel = document.getElementById('sos-info');
+  sosInfoPanel.innerHTML = `
+    <h5 class="text-danger">Error</h5>
+    <p>${message}</p>
+    <button onclick="document.getElementById('sos-info').classList.add('d-none')" class="btn btn-sm btn-outline-secondary mt-2">Close</button>
+  `;
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyATp9KWVwn8nFd2Av6igPkdk27bmO93F-g&callback=initMap">
+    </script>
+    <script>
+    
+    // --- Elements for showing/hiding the chat window ---
+    const chatContainer = document.getElementById('chat-container');
+    const toggleButton = document.getElementById('chat-toggle-btn');
+    const closeButton = document.getElementById('close-chat-btn');
+
+    // --- Elements for the chat functionality ---
+    const chatForm = document.getElementById('chat-input-form');
+    const userInput = document.getElementById('userInput');
+    const chatLog = document.getElementById('chat-log');
+
+    // --- Event Listeners to toggle chat visibility ---
+    toggleButton.addEventListener('click', () => {
+        chatContainer.classList.toggle('hidden');
+    });
+
+    closeButton.addEventListener('click', () => {
+        chatContainer.classList.add('hidden');
+    });
+    
+    // --- Event listener for sending a message ---
+    chatForm.addEventListener('submit', (event) => {
+        sendMessage(event);
+    });
+
+    // --- Main function to handle sending messages ---
+    async function sendMessage(event) {
+        event.preventDefault(); 
+        const messageText = userInput.value.trim();
+
+        if (messageText === "") {
+            return; 
+        }
+
+        addMessageToLog(messageText, 'user');
+        userInput.value = ''; 
+        
+        try {
+            const response = await new Promise(resolve => setTimeout(() => {
+                resolve({
+                    ok: true,
+                    json: () => Promise.resolve({ reply: "Thank you for your message. We are connecting you to an expert." })
+                });
+            }, 1000)); 
+
+            if (!response.ok) {
+                throw new Error("Network error");
+            }
+            const data = await response.json();
+            
+            addMessageToLog(data.reply, 'bot');
+
+        } catch (error) {
+            console.error('Fetch error:', error);
+            addMessageToLog("Sorry, something went wrong. Please try again later.", 'bot');
+        }
+    }
+
+    // --- Helper function to add a message to the UI ---
+    function addMessageToLog(message, sender) {
+        const messageElement = document.createElement('p');
+        
+        if (sender === 'user') {
+            messageElement.classList.add('user-message');
+            messageElement.innerHTML = `<strong>You:</strong> ${message}`;
+        } else {
+            messageElement.classList.add('bot-message');
+            messageElement.innerHTML = `<strong>Bot:</strong> ${message}`;
+        }
+        
+        chatLog.appendChild(messageElement);
+        
+        chatLog.scrollTop = chatLog.scrollHeight;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Offer Card Functionality ---
+    const claimBtn = document.getElementById('claimBtn');
+    const confirmationMsg = document.getElementById('confirmation');
+
+    if (claimBtn && confirmationMsg) {
+        claimBtn.addEventListener('click', function() {
+            // Hide the button and show the confirmation message
+            claimBtn.style.display = 'none';
+            confirmationMsg.classList.remove('hidden');
+
+            // Optional: Hide the whole card after a few seconds
+            setTimeout(() => {
+                const offerCard = document.querySelector('.offer-card');
+                if(offerCard) {
+                    offerCard.style.transition = 'opacity 0.5s ease';
+                    offerCard.style.opacity = '0';
+                    setTimeout(() => offerCard.style.display = 'none', 500);
+                }
+            }, 4000); // The card will disappear after 4 seconds
+        });
+    }
+
+    // --- SOS Info Panel Functionality ---
+    const sosBtn = document.getElementById('sosBtn');
+    const sosPanel = document.querySelector('.sos-info-panel');
+
+    // This assumes your sos-info-panel starts with the "hidden" class in your HTML
+    if (sosBtn && sosPanel) {
+        sosBtn.addEventListener('click', function() {
+            // Toggle the 'hidden' class to show/hide the panel
+            sosPanel.classList.toggle('hidden');
+        });
+    }
+
+    // --- Chat Widget Functionality ---
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatContainer = document.getElementById('chat-container');
+    const closeChatBtn = document.getElementById('close-chat-btn');
+    const chatInputForm = document.getElementById('chat-input-form');
+    const userInput = document.getElementById('userInput');
+    const chatLog = document.getElementById('chat-log');
+    const sendBtn = document.getElementById('sendBtn');
+
+    if (chatToggleBtn && chatContainer && closeChatBtn && chatInputForm && userInput && chatLog) {
+        
+        // Open the chat window
+        chatToggleBtn.addEventListener('click', () => {
+            chatContainer.classList.remove('hidden');
+        });
+
+        // Close the chat window
+        closeChatBtn.addEventListener('click', () => {
+            chatContainer.classList.add('hidden');
+        });
+
+        // Handle sending a message
+        chatInputForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the page from reloading
+            const messageText = userInput.value.trim();
+
+            if (messageText !== '') {
+                // Add user's message to the chat log
+                addMessage(messageText, 'user-message');
+                userInput.value = ''; // Clear the input field
+                
+                // Simulate a bot response after a short delay
+                setTimeout(getBotResponse, 1000);
+            }
+        });
+    }
+
+    function addMessage(text, className) {
+        const p = document.createElement('p');
+        p.className = className;
+        p.textContent = text;
+        chatLog.appendChild(p);
+        // Scroll to the latest message
+        chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    function getBotResponse() {
+        // This is a simple, predefined bot response.
+        // You can make this more complex later.
+        const response = "Thanks for your message! We are an AI assistant and cannot provide legal advice, but we can help you find relevant resources. How can I assist you?";
+        addMessage(response, 'bot-message');
+    }
+
+    // --- Bonus: Make Navbar Sticky on Scroll ---
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) { // When scrolled more than 50px
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+});
+
+const submitQuestionBtn = document.querySelector('#askQuestionModal .btn-danger');
+
+submitQuestionBtn.addEventListener('click', async () => {
+    // 1. Get data from the form
+    const title = document.getElementById('questionTitle').value;
+    const category = document.getElementById('questionCategory').value;
+    const details = document.getElementById('questionDetails').value;
+    const isAnonymous = document.getElementById('postAnonymously').checked;
+
+    // 2. Send data to your new backend using fetch()
+    try {
+        const response = await fetch('http://localhost:3000/api/questions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title, category, details, isAnonymous }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert('Success: ' + result.message);
+            // Optionally, close the modal here
+            // $('#askQuestionModal').modal('hide'); 
+        } else {
+            alert('Error: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Failed to connect to the backend:', error);
+        alert('Could not connect to the server. Is it running?');
+    }
+});
+// Wait for the entire HTML document to be loaded
+document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Initialize WOW.js for animations ---
+    if (typeof WOW !== 'undefined') {
+        new WOW().init();
+    }
+
+    // --- Navbar background change on scroll ---
+    const navbar = document.querySelector('.navbar.fixed-top');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = '#3D3A4A';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+            }
+        });
+    }
+
+    // --- Offer Card Functionality ---
+    const claimBtn = document.getElementById('claimBtn');
+    if (claimBtn) {
+        claimBtn.addEventListener('click', function() {
+            const confirmationMsg = document.getElementById('confirmation');
+            claimBtn.style.display = 'none';
+            confirmationMsg.classList.remove('hidden');
+        });
+    }
+
+    // --- Membership Pricing Toggle ---
+    const prices = {
+        basic: { 3: 1499, 6: 2799, 12: 5299 },
+        pro: { 3: 4999, 6: 9499, 12: 17999 },
+        premium: { 3: 9999, 6: 18999, 12: 35999 }
+    };
+    const durationButtons = document.querySelectorAll('.duration-btn');
+    durationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const plan = this.dataset.plan;
+            const duration = this.dataset.duration;
+            const priceElement = document.getElementById(`price-${plan}`);
+            priceElement.innerText = `₹${prices[plan][duration].toLocaleString('en-IN')}`;
+            const periodText = priceElement.nextElementSibling;
+            periodText.innerText = (duration === '12') ? 'per year' : `per ${duration} months`;
+            this.closest('.pricing-card').querySelectorAll('.duration-btn').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // --- "Ask a Question" Modal Form ---
+    const submitQuestionBtn = document.getElementById('submitQuestionBtn');
+    if (submitQuestionBtn) {
+        submitQuestionBtn.addEventListener('click', async () => {
+            const title = document.getElementById('questionTitle').value;
+            const category = document.getElementById('questionCategory').value;
+            const details = document.getElementById('questionDetails').value;
+            const isAnonymous = document.getElementById('postAnonymously').checked;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/questions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, category, details, isAnonymous }),
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Success: ' + result.message);
+                    $('#askQuestionModal').modal('hide'); // Close modal on success
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Could not connect to the server. Is it running?');
+            }
+        });
+    }
+
+    // --- "Generate Legal Notice" Modal Form ---
+    const generateNoticeBtn = document.getElementById('generateNoticeBtn');
+    if (generateNoticeBtn) {
+        generateNoticeBtn.addEventListener('click', async () => {
+            const noticeData = {
+                senderName: document.getElementById('senderName').value,
+                senderFatherName: document.getElementById('senderFatherName').value,
+                senderAddress: document.getElementById('senderAddress').value,
+                recipientName: document.getElementById('recipientName').value,
+                recipientAddress: document.getElementById('recipientAddress').value,
+                reason: document.getElementById('noticeReason').value,
+                amount: document.getElementById('noticeAmount').value,
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/generate-notice', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(noticeData),
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob(); // Get the PDF file as a blob
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = `Legal_Notice_${Date.now()}.pdf`; // Name of the downloaded file
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    $('#legalNoticeModal').modal('hide');
+                } else {
+                    const result = await response.json();
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Could not connect to the server. Is it running?');
+            }
+        });
+    }
+    
+    // --- Chat Widget ---
+    const chatContainer = document.getElementById('chat-container');
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const closeChatBtn = document.getElementById('close-chat-btn');
+    const chatInputForm = document.getElementById('chat-input-form');
+    
+    if(chatToggleBtn) chatToggleBtn.addEventListener('click', () => chatContainer.classList.remove('hidden'));
+    if(closeChatBtn) closeChatBtn.addEventListener('click', () => chatContainer.classList.add('hidden'));
+
+    if(chatInputForm){
+        chatInputForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Chat logic can be expanded here
+        });
+    }
+});
+
+
+// --- Global Functions (must be outside DOMContentLoaded for API callbacks) ---
+
+// Google Maps Initialization
+function initMap() {
+    const khannaLocation = { lat: 30.7041, lng: 76.2185 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: khannaLocation,
+    });
+    new google.maps.Marker({
+        position: khannaLocation,
+        map: map,
+        title: "AdhikarNOW Location"
+    });
+}
+// Add this inside your DOMContentLoaded event listener in script.js
+
+// --- Case Tracker Functionality ---
+const trackBtn = document.getElementById('trackBtn');
+const caseIdInput = document.getElementById('caseIdInput');
+const resultsCard = document.getElementById('resultsCard');
+const loader = document.getElementById('loader');
+const notFoundMessage = document.getElementById('notFound');
+
+trackBtn.addEventListener('click', async () => {
+    const caseId = caseIdInput.value.trim();
+    if (!caseId) return alert('Please enter a Case ID.');
+
+    // 1. Reset UI and show loader
+    resultsCard.classList.remove('visible');
+    resultsCard.innerHTML = ''; // Clear old results
+    notFoundMessage.classList.add('hidden');
+    loader.classList.remove('hidden');
+
+    try {
+        const response = await fetch(`http://localhost:3000/api/case/${caseId}`);
+        const data = await response.json();
+        
+        loader.classList.add('hidden'); // Hide loader
+
+        if (response.ok) {
+            // 2. If case is found, build the results HTML
+            resultsCard.innerHTML = `
+                <h4 class="mb-4 font-weight-bold">Tracking Details for Case ID: ${data.case_id}</h4>
+                <div class="row mb-4">
+                    <div class="col-md-6"><strong>Subject:</strong> ${data.subject}</div>
+                    <div class="col-md-6"><strong>Assigned Advocate:</strong> ${data.assigned_advocate}</div>
+                </div>
+                <ul class="timeline" id="timeline-list"></ul>
+            `;
+            
+            const timelineList = document.getElementById('timeline-list');
+            data.timeline.forEach(item => {
+                const isCurrent = !item.completed;
+                const itemClass = isCurrent ? 'current' : 'active';
+                const timelineItem = document.createElement('li');
+                timelineItem.className = `timeline-item ${itemClass}`;
+                timelineItem.innerHTML = `
+                    <div class="timeline-icon"><i class="fa ${item.icon}"></i></div>
+                    <div class="timeline-content">
+                        <h5>${item.status}</h5>
+                        <p class="text-muted mb-0">${item.date}</p>
+                    </div>
+                `;
+                timelineList.appendChild(timelineItem);
+            });
+
+            resultsCard.classList.add('visible'); // Show results with animation
+        } else {
+            // 3. If case is not found (404 error)
+            notFoundMessage.classList.remove('hidden');
+        }
+    } catch (error) {
+        loader.classList.add('hidden');
+        alert('Could not connect to the server. Please make sure it is running.');
+    }
+});
+</script>
+<script src="dashboard.js"></script>
+<script>
+ 
+</script>
+</body>
+</html>
+</body>
+
+</html>

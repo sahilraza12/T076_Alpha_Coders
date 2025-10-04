@@ -1,0 +1,900 @@
+body,html{margin: 0;padding: 0;}
+
+.navbar {
+  background-color: rgba(0,0,0,0.00);
+	z-index: 1000;
+}
+.navbar .navbar-brand {
+  color: #5308e9;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #2517e9;
+}
+.navbar .navbar-text {
+  color: #ebc60d;
+}
+.navbar .navbar-text a {
+  color: #ebc60d;
+}
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+  color: #ebc60d; 
+}
+.navbar .navbar-nav .nav-link {
+  color: #ebc60d;
+  border-radius: .25rem;
+  margin: 0 0.25em;
+}
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+  color: #ecdbff;
+}
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+  color: #ecdbff;
+  background-color: #ff356a;
+}
+.navbar .navbar-toggle {
+  border-color: #ff356a;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #ff356a;
+}
+.navbar .navbar-toggle .navbar-toggler-icon {
+  color: #f3f9f6;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #f3f8f9;
+}
+.navbar .navbar-link {
+  color: #f3f8f9;
+}
+.navbar .navbar-link:hover {
+  color: #ecdbff;
+}
+
+@media (max-width: 575px) {
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #f3f8f9;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ecdbff;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ecdbff;
+    background-color: #ff356a;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #f3f8f9;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ecdbff;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ecdbff;
+    background-color: #ff356a;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #f3f8f9;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ecdbff;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ecdbff;
+    background-color: #ff356a;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #f3f8f9;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ecdbff;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ecdbff;
+    background-color: #ff356a;
+  }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+  color: #f3f8f9;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+  color: #ecdbff;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+  color: #ecdbff;
+  background-color: #ff356a;
+}
+
+
+
+
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item{
+	height: 100%;
+}
+
+.carousel-caption{
+	top:30%;
+	bottom: auto;
+}
+
+.heading{font-size: 60px; text-shadow: 2px 2px #e3ff0e;}
+.sub-heading{font-size: 30px; text-shadow: 2px 2px #e7ff0e;}
+
+ .bg-section {
+  background-color: #f5f7fa;
+}
+
+.bg-highlight {
+  background-color: #f9a826;
+  color: #ffffff;
+}
+
+.icon-text {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.icon-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  background-color: #f0f4ff;
+}
+
+.icon-text i {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #1e3d59;
+  transition: color 0.3s ease;
+}
+
+.icon-text:hover i {
+  color: #f9a826;
+}
+
+.icon-text h5 {
+  font-weight: 600;
+  color: #1e3d59;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.icon-text:hover h5 {
+  color: #f9a826;
+}
+
+.icon-text p {
+  font-size: 15px;
+  color: #4a4a4a;
+}
+
+/* Advocate Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* Image Consistency */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Advocate Name */
+.card-heading {
+  font-size: 18px;
+  color: #1e3d59;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Description Text */
+.card-text {
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+/* Button Styling */
+.btn-pink {
+  background-color: #f9a826;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #e08e1b;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Icon inside Button */
+.btn-pink i {
+  margin-right: 6px;
+}
+
+/* Remove background color and use clean layout */
+.be {
+  background-image: none;
+  background-color: transparent;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+/* Inner Text Styling */
+.inner-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #1e3d59;
+}
+
+.inner-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #4a4a4a;
+}
+
+.inner-text a.btn-dark {
+  background-color: #1e3d59;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.inner-text a.btn-dark:hover {
+  background-color: #142c40;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner-text h1 {
+    font-size: 28px;
+  }
+  .inner-text h3 {
+    font-size: 18px;
+  }
+}
+.bc{
+  text-decoration-color: #3a11dc;
+  text-shadow:  2px 2px #1ebad9;
+  background-image: url("img/constitution-of-india@3x-scaled.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+}
+
+.btn-outline-dark {
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Section Container */
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Heading Styling */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1e3d59;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+/* Button Group Styling */
+.btn-outline-dark {
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 24px;
+  margin: 8px;
+  font-size: 15px;
+  border: 2px solid #1e3d59;
+  color: #1e3d59;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-outline-dark:hover {
+  background-color: #1e3d59;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  .btn-outline-dark {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+/* Footer Container */
+.adhikar-footer {
+  background-color: #1e3d59;
+  color: #ffffff;
+  padding: 50px 0 30px;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Navbar */
+.adhikar-footer .adhikar-navbar {
+  background-color: transparent;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.adhikar-footer .navbar-brand {
+  font-weight: 600;
+  font-size: 20px;
+  color: #f9a826;
+  letter-spacing: 1px;
+}
+
+.adhikar-footer .navbar-brand:hover {
+  color: #ffffff;
+}
+
+.adhikar-footer .logo-img {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Footer Links */
+.footer-link {
+  color: #f9a826;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Footer Headings */
+.adhikar-footer h4,
+.adhikar-footer h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Footer Text */
+.adhikar-footer p {
+  font-size: 14px;
+  color: #d1d1d1;
+  margin-bottom: 8px;
+}
+
+/* Footer Icons */
+.adhikar-footer i {
+  margin-right: 8px;
+  color: #f9a826;
+}
+
+/* Divider Line */
+.adhikar-footer hr.bg-light {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Bottom Text */
+.adhikar-footer .text-muted {
+  color: #cccccc !important;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .adhikar-footer .col-md-4 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .adhikar-footer .navbar-nav {
+    justify-content: center;
+  }
+
+  .adhikar-footer .navbar-nav .nav-link {
+    margin: 5px 10px;
+  }
+}
+
+/* --- Founder Section Styling --- */
+.founder-section {
+  padding: 80px 0;
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column; /* Mobile first: stacks image on top of text */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Keeps rounded corners with the image */
+  text-align: center;
+}
+
+.founder-img-container {
+  flex-shrink: 0;
+}
+
+.founder-img {
+  width: 100%;
+  height: 250px; /* Fixed height for mobile */
+  object-fit: cover;
+}
+
+.founder-info {
+  padding: 30px;
+}
+
+.founder-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #343a40;
+  margin: 0;
+}
+
+.founder-title {
+  font-size: 1.2rem;
+  color: #007bff; /* Highlight color */
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.founder-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #6c757d;
+  line-height: 1.6;
+  border-left: 3px solid #007bff;
+  padding-left: 15px;
+  text-align: left; 
+  display: inline-block;
+}
+
+/* --- Testimonial / Success Stories Section --- */
+.testimonial-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* A clean white background */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 50px;
+}
+
+#testimonialCarousel .carousel-item {
+    padding: 0 60px; /* Provides space for carousel arrows */
+}
+
+.testimonial-card {
+    background-color: #f8f9fa; /* Light grey card background */
+    border: none;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 0 auto;
+    max-width: 700px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Carousel Controls Styling */
+#testimonialCarousel .carousel-control-prev,
+#testimonialCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #343a40;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#testimonialCarousel .carousel-control-prev:hover,
+#testimonialCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+#testimonialCarousel .carousel-control-prev {
+    left: 0;
+}
+
+#testimonialCarousel .carousel-control-next {
+    right: 0;
+}
+
+#testimonialCarousel .carousel-control-prev i,
+#testimonialCarousel .carousel-control-next i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
+/* --- Responsive styles for desktop --- */
+@media (min-width: 768px) {
+  .founder-card {
+    flex-direction: row; /* Side-by-side layout on desktop */
+    text-align: left;
+  }
+  
+  .founder-img-container {
+    width: 40%; 
+  }
+
+  .founder-img {
+    height: 100%; 
+  }
+  
+  .founder-info {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* SOS Button Styling */
+.sos-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#sosBtn {
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  font-weight: bold;
+}
+
+.sos-info-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  padding: 20px;
+  border: 1px solid #ddd;
+  z-index: 1000;
+}
+
+/* ======================================== */
+/* CHAT WIDGET STYLES             */
+/* ======================================== */
+
+/* Floating button to toggle the chat window */
+#chat-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #35dc7b; /* Matches your site's danger color */
+    color: white;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.2s ease-in-out;
+}
+
+#chat-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* The main container for the chat window */
+#chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    max-height: 80vh;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform-origin: bottom right;
+}
+
+/* Class to hide the chat window with a nice animation */
+#chat-container.hidden {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+/* Header section of the chat window */
+#chat-header {
+    background-color: #3D3A4A; /* Matches your scrolled navbar */
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#chat-header h5 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#close-chat-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Area where messages are displayed */
+#chat-log {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* General styling for message bubbles */
+#chat-log p {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Bot's message bubbles (left-aligned) */
+.bot-message {
+    background-color: #e9e9eb;
+    color: #000;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+/* User's message bubbles (right-aligned) */
+.user-message {
+    background-color: #dc3545;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* The form for typing and sending messages */
+#chat-input-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* The text input field */
+#userInput {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    margin-right: 10px;
+    outline: none;
+}
+
+#userInput:focus {
+    border-color: #dc3545;
+}
+
+/* The send button */
+#sendBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+#sendBtn:hover {
+    background-color: #c82333; /* A darker red */
+}
+/* SOS BUTTON POSITIONING         */
+.sos-button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999; /* Ensures it stays on top of other content */
+}
+/* --- Offer Card Styling --- */
+
+.offer-card {
+    position: fixed;
+    bottom: 90px; /* Changed from 20px to move it up */
+    left: 20px;
+    background: linear-gradient(45deg, #5308e9, #750cd7);
+    color: #f0eaea;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1010;
+    max-width: 320px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease-in-out;
+    
+}
+.offer-card p{
+    color: rgba(255, 255, 255, 0.85); 
+    line-height: 1.5;
+}
+
+
+.navbar.scrolled {
+    background-color: #0f6d14; /* Uses your dark blue footer color */
+    transition: background-color 0.4s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this to style.css */
+.card-glass {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.results-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.results-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #dc3545;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.timeline { list-style-type: none; padding-left: 0; position: relative; }
+.timeline::before { content: ''; position: absolute; top: 15px; left: 15px; bottom: 15px; width: 3px; background: #e9ecef; }
+.timeline-item { position: relative; margin-bottom: 30px; padding-left: 45px; }
+.timeline-icon { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: #adb5bd; color: white; display: flex; align-items: center; justify-content: center; }
+.timeline-item.active .timeline-icon { background: #28a745; }
+.timeline-item.current .timeline-icon { background: #dc3545; }
+.timeline-content { background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 6px; }
+.timeline-content h5 { font-weight: bold; }
